@@ -58,35 +58,7 @@
     <div class="error hide" id="answer_error">Ответ должна быть больше 2х символов</div>
 </div>
 <div>        <input type="submit" value="Отправить"></div>
-<!--<script type="text/javascript">-->
-<!--    $(function () {-->
-<!--        var form = $("#user_form");-->
-<!--        form.on('submit', onSubmit);-->
-<!--        function onSubmit(event) {-->
-<!--            var u_name = $('#question');-->
-<!--            var l_name = $('#answer');-->
-<!--            var valid = true;-->
-<!--            if (u_name.val().length <= 2) {-->
-<!--                valid = false;-->
-<!--                $('#question_error').removeClass('hide');-->
-<!--            } else {-->
-<!--                $('#question_error').addClass('hide');-->
-<!--            }-->
-<!--            if (l_name.val().length <= 2) {-->
-<!--                valid = false;-->
-<!--                $('#answer_error').removeClass('hide');-->
-<!--            } else {-->
-<!--                $('#answer_error').addClass('hide');-->
-<!--            }-->
-<!--            if (!valid) {-->
-<!--                event.preventDefault();-->
-<!--            }-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-
 </pre>
 </form>
-
 </body>
 </html>
