@@ -44,6 +44,5 @@ if (!empty($_POST['question']) && !empty($_POST['answer'])) {
     } else{
         echo json_encode($error);
     }
-
 }}
 ?>
