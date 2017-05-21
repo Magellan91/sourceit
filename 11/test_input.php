@@ -1,6 +1,7 @@
 <?php if (!empty($_POST['kat'])){
 if (!empty($_POST['question']) && !empty($_POST['answer'])) {
-    echo json_encode( true);
+    $true =['success' => true,];
+    echo json_encode( $true);
     $question = $answer = $kat = null;
     if ($_POST['kat'] == 'ko') {
         $question = $_POST['question'];
@@ -30,11 +31,14 @@ if (!empty($_POST['question']) && !empty($_POST['answer'])) {
         exit;
     }
 } else {
+    $error=['success' => false, 'errors'=>['question'=>'Field is empty']];
     if (empty($_POST['question'])) {
-        echo json_encode(false);
+        echo json_encode($error);
     }
-    if (empty($_POST['answer'])) {
-        echo json_encode(false);
+    elseif (empty($_POST['answer'])) {
+        echo json_encode($error);
+    } else{
+        echo json_encode($error);
     }
 
 }}
