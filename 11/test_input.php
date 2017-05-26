@@ -1,4 +1,5 @@
-<?php if (!empty($_POST['kat'])){
+<?php 
+if (!empty($_POST['kat'])){
 if (!empty($_POST['question']) && !empty($_POST['answer'])) {
     $true =['success' => true,];
     echo json_encode( $true);
@@ -35,11 +36,13 @@ if (!empty($_POST['question']) && !empty($_POST['answer'])) {
     if (empty($_POST['question'])) {
         echo json_encode($error);
     }
-    elseif (empty($_POST['answer'])) {
+    else {
+        echo json_encode($error);
+    }
+        if (empty($_POST['answer'])) {
         echo json_encode($error);
     } else{
         echo json_encode($error);
     }
-
 }}
 ?>
