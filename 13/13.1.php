@@ -49,7 +49,7 @@
                 var city = $("#city").val();
                 var country = $("#country").val();
                 $.ajax({
-                    url: "test_input.php",
+                    url: "Serv.php",
                     type: "post",
                     dataType: "json",
                     data: {
@@ -59,8 +59,12 @@
                         city: city,
                         country: country,
                     },
-                    success: function (result) {
-                        $('#Result').div(result);
+                    success: function (data) {
+                        $('#first_name').val('');
+                        $('#last_name').val('');
+                        $('#company').val('');
+                        $('#city').val('');
+                        $('#country').val('');
                     }
                 });
             }
