@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.content h1{
+    margin: 0 auto;
+}
+
+.wrapper, .content, .menu, body, html {
+    height: 100%;
+    width: 100%;
+
+}
+
+.wrapper {
+    display: flex;
+}
+
+.content {
+    fles: 1;
+    padding: 20px;
+    background: #FCFCFD;
+}
+.menu{
+    width: 200px;
+    background: #464E78;
+    padding: 20px;
+
+}
+.menu a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 25px;
+    font-family: 'Philosopher', sans-serif;
+    text-transform: uppercase;
+}
+
+
+.bloc {
+    margin: 20px;
+    background: #fff;
+    border: 1px solid #EEEFF2;
+    border-radius: 10px;
+}
+
+body {
+    font-size: 14px;
+}
+
+#error_serv {
+    color: red;
+    transition: all 0.5s;
+}
+
+#user_form {
+    color: #3ADBFD;
+}
+pre{
+ padding-bottom: -15px;
+}
+
+
+.login {
+    width: 600px;
+    height: 350px;
+    background-color: rgba(24, 33, 52, 0.7);
+    margin: 50px auto 0 auto;
+    text-align: center;
+    box-shadow: 0 -5px 0 #3adbfd;
+    border-radius: 0 0 10px 10px;
+}
+
+.login img {
+    width: 120px;
+    height: 120px;
+    margin: -90px 0 0 0;
+    border: 5px solid #1a394f;
+    border-radius: 50%;
+    box-shadow: 0 -5px 0 #3adbfd;
+}
+
+
+.register {
+      width: 600px;
+      height: 480px;
+      background-color: rgba(24, 33, 52, 0.7);
+      margin: 50px auto 0 auto;
+      text-align: center;
+      box-shadow: 0 -5px 0 #3adbfd;
+      border-radius: 0 0 10px 10px;
+  }
+
+.register img {
+    width: 120px;
+    height: 120px;
+    margin: -90px 0 0 0;
+    border: 5px solid #1a394f;
+    border-radius: 50%;
+    box-shadow: 0 -5px 0 #3adbfd;
+}
+
+.dws-submit {
+    background: #34c0e2;
+    color: #fff;
+    border: 1px solid #34c0e2;
+    padding: 15px 30px 15px 30px;
+    border-radius: 12px;
+}
+
+#out {
+    font-size: 16px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding-left: 10px;
+
+}
+
+.dws-submit:hover {
+    background: #2d92e2;
+    color: #fff;
+    border: 1px solid #e2dfe0;
+    padding: 15px 30px 15px 30px;
+    border-radius: 12px;
+}
+
+.boot {
+    margin: 0 auto;
+}
+
+.error {
+    border-color: #FF5088;
+}
+
+.hide {
+    border-color: #3ADBFD;
+}
