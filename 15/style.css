@@ -17,7 +17,7 @@
 }
 
 .content {
-    fles: 1;
+    flex: 1;
     padding: 20px;
     background: #FCFCFD;
 }
@@ -140,4 +140,34 @@ input[type="text"], input[type="password"] {
 
 .hide {
     border-color: #3ADBFD;
+}
+
+#loading {
+    width: 100%;
+    position: absolute;
+}
+
+#pagination {
+    text-align: center;
+    margin-left: 120px;
+    font-size: 16px;
+}
+li {
+    list-style: none;
+    float: left;
+    margin-right: 16px;
+    padding: 5px;
+    background: #34c0e2;
+    color: #fff;
+    border: 1px solid #34c0e2;
+    border-radius: 2px;
+}
+
+li:hover {
+    cursor: pointer;
+    background: #2d92e2;
+    color: #fff;
+    border: 1px solid #e2dfe0;
+    padding: 5px;
+    border-radius: 2px;
 }

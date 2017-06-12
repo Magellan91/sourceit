@@ -91,7 +91,7 @@ headers($arr); ?>
 <input type="submit" value="Зарегистрироваться"
        class="dws-submit"> </div>
 
-    </div>
+
 </pre>
 <?php
 bottom(); ?>

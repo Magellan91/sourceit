@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_URI'] == '/') {
     $page = 'home';
 } else {
     $page = substr($_SERVER['REQUEST_URI'], 1);
-    if (!preg_match('/^[A-z0-9]{3,15}$/', $page)) exit('Erorr url');
+    if (!preg_match('/^[A-z0-9]{3,25}/', $page)) exit('Erorr url');
 }
 session_start();
 $num=0;
@@ -17,6 +17,7 @@ if (file_exists('all/' . $page . '.php')) {
 } else {
     exit('Страница 404');
 }
+include_once ('guest/connect.php');
 function top($title)
 {
     echo '<!DOCTYPE html>

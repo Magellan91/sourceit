@@ -3,14 +3,20 @@ if (!empty($_POST['login']) && !empty($_POST['email']) && !empty($_POST['passwor
     if ($_POST['password'] === $_POST['password_2']) {
         $login = trim($_POST['login']);
         $email = trim($_POST['email']);
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $created = date('d.m.y H:i:s');
         include('connect.php');
-        $res = mysqli_query($mysqli, "SELECT * FROM `USERS` WHERE login = '$login'");
-        $num = mysqli_num_rows($res);
+        $stmt = mysqli_prepare($mysqli, "SELECT * FROM `USERS` WHERE `login` = ? ");
+        mysqli_stmt_bind_param($stmt, 's', $login);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $num = mysqli_num_rows($result);
         if ($num == 0) {
-            $res = mysqli_query($mysqli, "SELECT * FROM `USERS` WHERE email = '$email'");
-            $num = mysqli_num_rows($res);
+            $stmt = mysqli_prepare($mysqli, "SELECT * FROM `USERS` WHERE `email` = ? ");
+            mysqli_stmt_bind_param($stmt, 's', $email);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            $num = mysqli_num_rows($result);
             if ($num == 0) {
                 $stmt = mysqli_prepare($mysqli, "INSERT INTO `USERS` (login, email, password, created) VALUES (?, ?, ?, ?)");
                 mysqli_stmt_bind_param($stmt, 'ssss', $login, $email, $password, $created);
@@ -21,18 +27,15 @@ if (!empty($_POST['login']) && !empty($_POST['email']) && !empty($_POST['passwor
                 echo json_encode($true);
             } else {
                 $error = "Email существует $email";
-                echo json_encode($error);
             }
         } else {
             $error = "Логин существует $login";
-            echo json_encode($error);
         }
     } else {
         $error = "Пароли не совпадают";
-        echo json_encode($error);
     }
-
 } else {
     $error = "Не обяснимо но ошибка";
-    echo json_encode($error);
 }
+if (isset($error))
+    echo json_encode($error);

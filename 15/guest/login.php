@@ -45,7 +45,8 @@ top('Войти'); ?>
 $arr = ['/' => 'Главная',
     'login' => 'Вход',
     'reg' => 'Регистрация'];
-headers($arr); ?>
+headers($arr);
+?>
 <pre>
     <div class="login">
 <form action="" method="post" id="user_form">
