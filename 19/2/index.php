@@ -15,13 +15,10 @@
 <?php
 if (!empty($_POST['text'])) {
     $text = $_POST['text'];
-    var_dump($text);
     $text = str_word_count($text, 1, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя");
-    var_dump($text);
     foreach ($text as &$value) {
         $value = strlen($value);
     }
-    var_dump($text);
     $text = array_count_values($text);
     foreach ($text as $key => $value) {
         echo 'Количество слов содержащих ' . $key/2 . ' символов: ' . $value . '<br>';
