@@ -15,13 +15,24 @@
 <?php
 if (!empty($_POST['text'])) {
     $text = $_POST['text'];
-    $text = str_word_count($text, 1, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя");
-    foreach ($text as &$value) {
-        $value = strlen($value);
-    }
-    $text = array_count_values($text);
-    foreach ($text as $key => $value) {
-        echo 'Количество слов содержащих ' . $key/2 . ' символов: ' . $value . '<br>';
+    if (preg_match('/^[A-z0-9\s]+$/', $text)) {
+        $text = str_word_count($text, 1);
+        foreach ($text as &$value) {
+            $value = strlen($value);
+        }
+        $text = array_count_values($text);
+        foreach ($text as $key => $value) {
+            echo 'Количество слов содержащих ' . $key . ' символов: ' . $value . '<br>';
+        }
+    } else {
+        $text = str_word_count($text, 1, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя");
+        foreach ($text as &$value) {
+            $value = strlen($value);
+        }
+        $text = array_count_values($text);
+        foreach ($text as $key => $value) {
+            echo 'Количество слов содержащих ' . $key / 2 . ' символов: ' . $value . '<br>';
+        }
     }
 } ?>
 </body>
